@@ -1,0 +1,51 @@
+body {
+    padding: 20px;
+    background-color: rgb(100, 143, 219);
+}
+
+#result {
+    padding: 5px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+    background-color: rgb(248, 247, 247);
+
+    height: 200px;
+
+    overflow: scroll;
+}
+
+#rank {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+#time {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.text {
+    text-align: center;
+    font-size: xx-large;
+    background-color: rgb(214, 211, 40);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+button {
+    margin-top: 5px;
+    width: 300px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.chose {
+    background-color: aquamarine;
+}

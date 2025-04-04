@@ -1,0 +1,31 @@
+body {
+    padding: 20px;
+    background-color: rgb(100, 143, 219);
+}
+
+.g-recaptcha {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 300px;
+    padding: 5px;
+}
+
+#time {
+    padding: 10px;
+    font-size: xx-large;
+    text-align: center;
+    background-color: rgb(78, 114, 156);
+    color: rgb(255, 255, 255);
+}
+
+button {
+    margin-top: 5px;
+    width: 300px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}

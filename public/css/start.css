@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(100, 143, 219);
+}
+
+.title {
+    padding: 20px;
+    color: aliceblue;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    width: 300px;
+    font-size: x-large;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+
+    transform: (-50%, -15%);
+    -webkit-transform: translate(-50%, -15%);
+    -ms-transform: translate(-50%, -15%);
+}
+
+img {
+    height: 45vh;
+}
+
+p {
+    color: white;
+}
