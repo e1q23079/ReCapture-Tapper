@@ -9,6 +9,13 @@ npm run start
 - DATABASE
 ## データベース
 ```
+CREATE TABLE record(
+	id INT AUTO_INCreMENT NOT NULL PRIMARY KEY,
+	time int(11) NOT NULL
+);
+```
+
+```
 --
 -- データベース: `gameRecord`
 --
