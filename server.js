@@ -71,7 +71,6 @@ app.post('/registration', (req, res) => {
     //console.log(req.body);
 });
 
-
 app.listen(port, () => {
     console.log("Server is running!!");
 });
