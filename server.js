@@ -27,7 +27,7 @@ app.use(express.static('public'));
 
 // timeを指定して，ランキングを取得（GET）
 app.get('/getRank/:time', (req, res) => {
-    connection.query('SELECT DISTINCT time FROM time ORDER BY time;', (error, response) => {
+    connection.query('SELECT DISTINCT time FROM record ORDER BY time;', (error, response) => {
         if (error) throw error;
         //console.log(response);
         //res.json(response);
@@ -46,7 +46,7 @@ app.get('/getRank/:time', (req, res) => {
 
 // 上位100名のランキングリストを取得（GET）
 app.get('/getRankList', (req, res) => {
-    connection.query('SELECT DISTINCT time FROM time ORDER BY time LIMIT 100;', (error, response) => {
+    connection.query('SELECT DISTINCT time FROM record ORDER BY time LIMIT 100;', (error, response) => {
         if (error) throw error;
         //console.log(response);
         res.json(response);
@@ -55,7 +55,7 @@ app.get('/getRankList', (req, res) => {
 
 // 登録されているデータをすべて取得（GET）
 app.get('/showList', (req, res) => {
-    connection.query('SELECT time FROM time ORDER BY time;', (error, response) => {
+    connection.query('SELECT time FROM record ORDER BY time;', (error, response) => {
         if (error) throw error;
         //console.log(response);
         res.json(response);
@@ -64,7 +64,7 @@ app.get('/showList', (req, res) => {
 
 // 時刻を記録する（POST）
 app.post('/registration', (req, res) => {
-    connection.query(`INSERT INTO time(time) VALUES (${req.body.time});`, (error, response) => {
+    connection.query(`INSERT INTO record(time) VALUES (${req.body.time});`, (error, response) => {
         if (error) throw error;
     });
     res.send(req.body);
@@ -73,5 +73,17 @@ app.post('/registration', (req, res) => {
 
 
 app.listen(port, () => {
+    const sql1 = "CREATE TABLE `record` (`id` int(11) NOT NULL,`time` int(11) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+    connection.query(sql1, (error, response) => {
+        if (error) throw error;
+    });
+    const sql2 = "ALTER TABLE `record` ADD PRIMARY KEY (`id`);";
+    connection.query(sql2, (error, response) => {
+        if (error) throw error;
+    });
+    const sql3 = "ALTER TABLE `record` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;";
+    connection.query(sql3, (error, response) => {
+        if (error) throw error;
+    });
     console.log("Server is running!!");
 });
