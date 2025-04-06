@@ -73,17 +73,5 @@ app.post('/registration', (req, res) => {
 
 
 app.listen(port, () => {
-    const sql1 = "CREATE TABLE `record` (`id` int(11) NOT NULL,`time` int(11) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-    connection.query(sql1, (error, response) => {
-        if (error) throw error;
-    });
-    const sql2 = "ALTER TABLE `record` ADD PRIMARY KEY (`id`);";
-    connection.query(sql2, (error, response) => {
-        if (error) throw error;
-    });
-    const sql3 = "ALTER TABLE `record` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;";
-    connection.query(sql3, (error, response) => {
-        if (error) throw error;
-    });
     console.log("Server is running!!");
 });
